@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+ <head>
+   <link rel="stylesheet" href="form.css">
+    <title>Hospital Admission Form</title>
+    <body>
+         <form id="admissionForm">
+          <label for="name" >Name</label>
+          <input type="text" id="name" name="name"><br><br>
+          
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age"><br><br>
+
+          <label for="sex">Sex</label>
+          <select id="sex" name="sex">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="others">Others</option>
+          </select><br><br>
+
+          <label for="disease">Disease suffering from</label>
+          <iunput type="text" id="disease name"><br><br>
+
+          <label for="medication">Current Medication</label>
+          <input type="text" id="medication name="medication><br><br>
+           
+          <label for="appointmentDate">Date of appointment</label>
+          <input type="date" id="appointmentDate"><br><br>
+
+          <label for="appointmentTime">Time of appointment</label>
+          <input type="time" id="time of appointment"><br><br>
+
+          <labe for="deprtment">Hospital department</labe>
+          <input type="text" id="consultantTeam"><br><br>
+
+          <labe for="test">Tests needed</labe>
+          <input type="text" id="tests" name="tests"><br><br>
+            
+          <label for="samples">Samples/Medicine to bring</label>
+          <inptu type="text" id="samples" name="samples"><br><br>
+          
+          <label for="eatingInstruction">Eating/Drinking instructions</label>
+          <input type="text" id="eaatingInstruction" name="eatingInstruction"><br><br>
+          
+          <input type="submit" value="submit" id="submitButton">
+         </form>
+            <script>
+            const form = document.getElementById('admissionForm');
+            const submitButton = document.getElementById('submitButton');
+            //Event listener for submitting the form
+            form.addEventListener('submit', function(event) {
+              event.preventDefault();
+              //prevent form submission behaviour
+              const formData = new formData('form');
+              for (let[key, value] of formData.entries()) {
+                console.log('${key}: ${value}');
+              }
+            });
+            </script>
+    </body>
+ </head>
